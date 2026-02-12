@@ -23,9 +23,7 @@ const translations = {
         "opt-win": "Windows Setup ($10)",
         "opt-mac": "MacBook Setup ($10)",
         "btn-send": "Send to Telegram Bot",
-        "lang-btn": "ភាសាខ្មែរ 🇰🇭",
-        "status-open": "● Night Tech is Open",
-        "status-closed": "○ Opens at 8:30 PM"
+        "lang-btn": "ភាសាខ្មែរ 🇰🇭"
     },
     kh: {
         "hero-title": "កុំព្យូទ័រដើរយឺត? <br><span class='glow'>ជួសជុលត្រឹមតែ $5។</span>",
@@ -51,9 +49,7 @@ const translations = {
         "opt-win": "ដំឡើង Windows ($10)",
         "opt-mac": "ដំឡើង MacBook ($10)",
         "btn-send": "ផ្ញើទៅកាន់ Telegram",
-        "lang-btn": "English 🇺🇸",
-        "status-open": "● Night Tech កំពុងបើក",
-        "status-closed": "○ បើកនៅម៉ោង 8:30 យប់"
+        "lang-btn": "English 🇺🇸"
     }
 };
 
@@ -61,7 +57,6 @@ let currentLang = 'en';
 
 document.addEventListener('DOMContentLoaded', () => {
     const serviceForm = document.getElementById('serviceForm');
-    const statusBadge = document.getElementById('status-badge');
     const langBtn = document.getElementById('lang-switch');
 
     langBtn.addEventListener('click', () => {
@@ -73,21 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         langBtn.innerText = translations[currentLang]["lang-btn"];
-        updateStatus();
     });
-
-    function updateStatus() {
-        const now = new Date();
-        const hour = now.getHours();
-        const min = now.getMinutes();
-        const isOpen = (hour >= 20 && (hour > 20 || min >= 30)) || (hour < 4);
-        
-        statusBadge.innerText = isOpen ? translations[currentLang]["status-open"] : translations[currentLang]["status-closed"];
-        statusBadge.className = isOpen ? "badge open" : "badge closed";
-    }
-
-    updateStatus();
-    setInterval(updateStatus, 60000);
 
     if (serviceForm) {
         serviceForm.addEventListener('submit', (e) => {
