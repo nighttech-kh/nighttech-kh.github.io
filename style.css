@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Inter:wght@400;700;900&display=swap');
+
+:root {
+    --bg: #0d0d0f;
+    --card: #16161a;
+    --primary: #00ffa3;
+    --text: #ffffff;
+    --dim: #88888d;
+    --border: #2a2a2e;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Khmer OS Battambang', 'Hanuman', 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Navigation --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(13, 13, 15, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed; 
+    width: 90%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+.logo span { color: var(--primary); }
+
+.nav-right { display: flex; align-items: center; gap: 15px; }
+
+/* --- FIXED: LANGUAGE BUTTON --- */
+.lang-btn {
+    background: rgba(0, 255, 163, 0.1);
+    color: var(--primary);
+    border: 1px solid var(--primary); 
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.lang-btn:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 163, 0.4);
+}
+
+/* --- Animated Pulse Badge --- */
+.badge { 
+    padding: 6px 14px; 
+    border-radius: 30px; 
+    font-size: 0.8rem; 
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.open { 
+    border: 2px solid var(--primary); 
+    color: var(--primary);
+    box-shadow: 0 0 15px rgba(0, 255, 163, 0.3);
+    animation: pulseGlow 2s infinite;
+}
+
+.closed { border: 2px solid #444; color: #777; }
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 163, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 163, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 163, 0.2); }
+}
+
+/* --- Hero Section --- */
+.hero { 
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    margin-top: 60px;
+}
+
+/* --- FIXED: KHMER OVERLAP --- */
+h1 { 
+    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    margin-bottom: 10px; 
+    line-height: 1.5 !important; 
+}
+
+.glow { color: var(--primary); text-shadow: 0 0 30px rgba(0, 255, 163, 0.5); }
+
+.btn-primary { 
+    background: var(--primary); 
+    color: #000; 
+    padding: 18px 45px; 
+    border-radius: 12px; 
+    font-weight: 900;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--primary); }
+
+/* --- Services & Pricing Grid --- */
+.section { padding: 100px 8%; }
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+}
+
+.card { 
+    background: var(--card); 
+    padding: 40px; 
+    border-radius: 24px; 
+    border: 1px solid var(--border);
+    transition: 0.4s;
+}
+
+.card:hover { border-color: var(--primary); background: #1c1c21; }
+
+/* --- NEW: GLOW FOR $10 IN CARDS --- */
+.card span.price, .card strong.price {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 255, 163, 0.6);
+    font-weight: bold;
+}
+
+.price-item { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 20px 0; 
+    border-bottom: 1px solid var(--border);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* --- GLOWING PRICES IN LIST --- */
+.price-item span:last-child, 
+.price-item strong:last-child {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 255, 163, 0.6);
+    font-weight: bold;
+}
+
+/* --- Fixed Form Layout --- */
+.tech-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    width: 100%;
+}
+
+.form-group { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; 
+}
+
+input, select, textarea { 
+    background: #000; 
+    border: 1px solid #333; 
+    color: white; 
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input:focus { border-color: var(--primary); outline: none; }
+
+@media (max-width: 768px) {
+    .form-group { grid-template-columns: 1fr; }
+    nav { flex-direction: column; height: auto; padding: 20px; }
+}

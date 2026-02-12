@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Tech | After-Hours Repair</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NIGHT<span>TECH</span></div>
+        <div class="nav-right">
+            <button id="lang-switch" class="lang-btn">ភាសាខ្មែរ 🇰🇭</button>
+            <div id="status-badge" class="badge">Checking Status...</div>
+        </div>  
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1 data-key="hero-title">Laptop Lag? <br><span class="glow">Onsite Laptop Pickup</span></h1>
+            <p data-key="hero-desc">SSD Swaps & Windows Setup. Expert service, budget price.</p>
+            <div class="hero-btns">
+                <a href="#request-service" class="btn-primary" data-key="btn-book">Book Now</a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2 class="section-title" data-key="service-title">What I Do</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3 data-key="ssd-head">SSD Swapping</h3>
+                    <p data-key="ssd-text">Upgrade to high-speed storage. I handle hardware swap and cloning for a flat <span class="price">$5</span> labor fee.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🪟</div>
+                    <h3 data-key="win-head">Windows Setup</h3>
+                    <p data-key="win-text">Professional Windows 10/11 installation. No bloat, no errors, just pure speed. — <span class="price">$10</span></p>
+                </div>
+                <div class="card">
+                    <div class="icon">🍎</div>
+                    <h3 data-key="mac-head">MacBook Setup</h3>
+                    <p data-key="mac-text">Factory resets and software troubleshooting for MacBooks. Get back to work fast. — <span class="price">$10</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing section">
+            <h2 class="section-title" data-key="pricing-title">SSD & Labor Rates</h2>
+            <div class="glass-box pricing-table">
+                <div class="price-item"><strong data-key="labor-label">Labor (Any Service)</strong> <strong>$5</strong></div>
+                <div class="price-item"><span data-key="ssd-128">128GB SSD + Labor</span> <span>$40</span></div>
+                <div class="price-item"><span data-key="ssd-256">256GB SSD + Labor</span> <span>$60</span></div>
+                <div class="price-item"><span data-key="ssd-512">512GB SSD + Labor</span> <span>$80</span></div>
+                <div class="price-item"><span data-key="ssd-1tb">1TB SSD + Labor</span> <span>$94</span></div>
+                <p class="disclaimer" data-key="disclaimer">*SSD prices are estimates based on market rates.</p>
+            </div>
+        </section>
+
+        <section id="request-service" class="section">
+            <div class="glass-box">
+                <h2 class="section-title" data-key="form-title">Request a Repair</h2>
+                <form id="serviceForm" class="tech-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="text" id="telegram" placeholder="Telegram @Username" required>
+                    </div>
+                    <select id="serviceType" required>
+                        <option value="" disabled selected data-key="opt-select">Select Service</option>
+                        <option value="SSD Swapping" data-key="opt-ssd">SSD Swapping ($5 + Parts)</option>
+                        <option value="Windows Setup" data-key="opt-win">Windows Setup ($10)</option>
+                        <option value="MacBook Setup" data-key="opt-mac">MacBook Setup ($10)</option>
+                    </select>
+                    <textarea id="issue" placeholder="Laptop model and current issues..." rows="4" required></textarea>
+                    <button type="submit" class="btn-primary" data-key="btn-send">Send to Telegram Bot</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
