@@ -16,6 +16,11 @@ body {
     margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
+    /* FIXED: Better Khmer font rendering - lighter stroke */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
 }
 
 /* --- Navigation --- */
@@ -38,7 +43,7 @@ nav {
 
 .nav-right { display: flex; align-items: center; gap: 15px; }
 
-/* --- FIXED: LANGUAGE BUTTON --- */
+/* --- LANGUAGE BUTTON --- */
 .lang-btn {
     background: rgba(0, 255, 163, 0.1);
     color: var(--primary);
@@ -96,11 +101,19 @@ nav {
     margin-top: 60px;
 }
 
-/* --- FIXED: KHMER OVERLAP --- */
+/* --- Khmer text improvements --- */
+h1, h2, h3, p, span, div, button, input, select, textarea {
+    /* FIXED: Lighter stroke for all Khmer text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
 h1 { 
     font-size: clamp(2.5rem, 8vw, 4.5rem); 
     margin-bottom: 10px; 
     line-height: 1.5 !important; 
+    font-weight: 700;
 }
 
 .glow { color: var(--primary); text-shadow: 0 0 30px rgba(0, 255, 163, 0.5); }
@@ -137,7 +150,7 @@ h1 {
 
 .card:hover { border-color: var(--primary); background: #1c1c21; }
 
-/* --- NEW: GLOW FOR $10 IN CARDS --- */
+/* --- Price glow --- */
 .card span.price, .card strong.price {
     color: var(--primary);
     text-shadow: 0 0 10px rgba(0, 255, 163, 0.6);
@@ -153,7 +166,7 @@ h1 {
     line-height: 1.4;
 }
 
-/* --- GLOWING PRICES IN LIST --- */
+/* --- Price list glow --- */
 .price-item span:last-child, 
 .price-item strong:last-child {
     color: var(--primary);
@@ -161,7 +174,7 @@ h1 {
     font-weight: bold;
 }
 
-/* --- Fixed Form Layout --- */
+/* --- Form Layout --- */
 .tech-form { 
     display: flex; 
     flex-direction: column; 
@@ -186,6 +199,13 @@ input, select, textarea {
 }
 
 input:focus { border-color: var(--primary); outline: none; }
+
+/* FIXED: Better Khmer font rendering for inputs */
+input, select, textarea, button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
 
 @media (max-width: 768px) {
     .form-group { grid-template-columns: 1fr; }

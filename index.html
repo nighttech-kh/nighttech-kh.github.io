@@ -17,30 +17,51 @@
 
     <main>
         <section class="hero">
-            <h1 data-key="hero-title">Laptop Lag? <br><span class="glow">Onsite Laptop Pickup</span></h1>
-            <p data-key="hero-desc">SSD Swaps & Windows Setup. Expert service, budget price.</p>
+            <h1 data-key="hero-title">Laptop Lag? <br><span class="glow">Free Pickup. Fixed Fast.</span></h1>
+            <p data-key="hero-desc">SSD swaps, cleaning, repairs & more. Expert service, budget price.</p>
             <div class="hero-btns">
-                <a href="#request-service" class="btn-primary" data-key="btn-book">Book Now</a>
+                <a href="#request-service" class="btn-primary" data-key="btn-book">Book a Pickup</a>
             </div>
         </section>
 
         <section id="services" class="section">
             <h2 class="section-title" data-key="service-title">What I Do</h2>
             <div class="grid">
+                <!-- SSD Swapping -->
                 <div class="card">
                     <div class="icon">⚡</div>
                     <h3 data-key="ssd-head">SSD Swapping</h3>
                     <p data-key="ssd-text">Upgrade to high-speed storage. I handle hardware swap and cloning for a flat <span class="price">$5</span> labor fee.</p>
                 </div>
+                <!-- Windows Setup -->
                 <div class="card">
                     <div class="icon">🪟</div>
                     <h3 data-key="win-head">Windows Setup</h3>
                     <p data-key="win-text">Professional Windows 10/11 installation. No bloat, no errors, just pure speed. — <span class="price">$10</span></p>
                 </div>
+                <!-- MacBook Setup -->
                 <div class="card">
                     <div class="icon">🍎</div>
                     <h3 data-key="mac-head">MacBook Setup</h3>
                     <p data-key="mac-text">Factory resets and software troubleshooting for MacBooks. Get back to work fast. — <span class="price">$10</span></p>
+                </div>
+                <!-- Deep Cleaning -->
+                <div class="card">
+                    <div class="icon">🧹</div>
+                    <h3 data-key="clean-head">Deep Cleaning</h3>
+                    <p data-key="clean-text">Dusty fans? Sticky keyboard? I'll open it up and clean it right. — <span class="price">$10</span></p>
+                </div>
+                <!-- RAM Upgrades -->
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3 data-key="ram-head">RAM Upgrades</h3>
+                    <p data-key="ram-text">More memory, more speed. Labor <span class="price">$5</span> + cost of RAM (or bring your own).</p>
+                </div>
+                <!-- Screen & Battery -->
+                <div class="card">
+                    <div class="icon">🔋</div>
+                    <h3 data-key="screen-head">Screen & Battery</h3>
+                    <p data-key="screen-text">🔋 Screen Replacement — Labor <span class="price">$10</span> + cost of screen (varies by model)<br>🔋 Battery Replacement — Labor <span class="price">$5</span> + cost of battery</p>
                 </div>
             </div>
         </section>
@@ -57,19 +78,47 @@
             </div>
         </section>
 
+        <!-- How It Works Section -->
+        <section class="section">
+            <h2 class="section-title" data-key="how-title">How It Works</h2>
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="card" style="text-align: center;">
+                    <div class="icon">📞</div>
+                    <h3 data-key="step1-head">1. Book</h3>
+                    <p data-key="step1-text">Fill out the form below or message me on Telegram.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="icon">🚚</div>
+                    <h3 data-key="step2-head">2. Free Pickup</h3>
+                    <p data-key="step2-text">I pick up your laptop from your location—no extra charge.</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div class="icon">🔧</div>
+                    <h3 data-key="step3-head">3. Fixed & Returned</h3>
+                    <p data-key="step3-text">I fix it fast and bring it back to you.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="request-service" class="section">
             <div class="glass-box">
                 <h2 class="section-title" data-key="form-title">Request a Repair</h2>
                 <form id="serviceForm" class="tech-form">
                     <div class="form-group">
                         <input type="text" id="name" placeholder="Your Name" required>
-                        <input type="text" id="telegram" placeholder="Telegram @Username" required>
+                        <!-- CHANGED: Telegram Username → Phone Number -->
+                        <input type="tel" id="phone" placeholder="Telegram Phone Number" required>
                     </div>
                     <select id="serviceType" required>
                         <option value="" disabled selected data-key="opt-select">Select Service</option>
                         <option value="SSD Swapping" data-key="opt-ssd">SSD Swapping ($5 + Parts)</option>
                         <option value="Windows Setup" data-key="opt-win">Windows Setup ($10)</option>
                         <option value="MacBook Setup" data-key="opt-mac">MacBook Setup ($10)</option>
+                        <option value="Deep Cleaning" data-key="opt-clean">Deep Cleaning ($10)</option>
+                        <option value="RAM Upgrade" data-key="opt-ram">RAM Upgrade ($5 + Parts)</option>
+                        <option value="Screen Replacement" data-key="opt-screen">Screen Replacement ($10 + part)</option>
+                        <option value="Battery Replacement" data-key="opt-battery">Battery Replacement ($5 + part)</option>
+                        <option value="Diagnostic" data-key="opt-diagnostic">Diagnostic (Check without fix) — $5</option>
                     </select>
                     <textarea id="issue" placeholder="Laptop model and current issues..." rows="4" required></textarea>
                     <button type="submit" class="btn-primary" data-key="btn-send">Send to Telegram Bot</button>
